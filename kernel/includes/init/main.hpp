@@ -1,7 +1,7 @@
 /*
-*   Copyleft (C) 2025 linaix-os project.
-*   Follow MIT License.
-*/
+ *   Copyleft (C) 2025 linaix-os project.
+ *   Follow MIT License.
+ */
 
 /* included once */
 #pragma once

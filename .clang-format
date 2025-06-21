@@ -1,0 +1,58 @@
+#
+#   Copyleft (C) 2025 linaix-os project.
+#   Follow MIT License.
+#
+
+---
+BasedOnStyle: LLVM
+
+Language: Cpp
+
+AccessModifierOffset: -4   
+AlignAfterOpenBracket: Align
+AlignConsecutiveAssignments: true
+AlignConsecutiveDeclarations: true 
+
+AlignEscapedNewlines: Left 
+AlignOperands: Align        
+AlignTrailingComments: true 
+AllowShortBlocksOnASingleLine: Empty 
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: None
+AllowShortIfStatementsOnASingleLine: Never 
+AllowShortLoopsOnASingleLine: false
+BinPackArguments: false     
+BinPackParameters: false
+BreakBeforeBraces: Allman   
+ColumnLimit: 120
+ContinuationIndentWidth: 4  
+IndentCaseLabels: true     
+IndentWidth: 4            
+KeepEmptyLinesAtTheStartOfBlocks: false
+MaxEmptyLinesToKeep: 1
+PointerAlignment: Left      
+SpaceAfterCStyleCast: false 
+SpaceAfterTemplateKeyword: false
+SpaceBeforeAssignmentOperators: true 
+SpaceBeforeCpp11BracedList: true
+SpaceBeforeParens: ControlStatements 
+SpacesInAngles: Never     
+SpacesInContainerLiterals: false
+SpacesInParentheses: false  
+SpacesInSquareBrackets: false
+TabWidth: 4
+UseTab: Never             
+
+DerivePointerAlignment: false
+FixNamespaceComments: false
+IncludeBlocks: Regroup
+IndentPPDirectives: None
+NamespaceIndentation: None
+QualifierAlignment: Leave
+ReflowComments: true
+SortIncludes: true
+SortUsingDeclarations: true
+
+EmptyLineBeforeAccessModifier: LogicalBlock
+MacroBlockBegin: ""
+MacroBlockEnd: ""
