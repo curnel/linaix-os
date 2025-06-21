@@ -1,0 +1,15 @@
+#
+#   Copyleft (C) 2025 linaix-os project.
+#   Follow MIT License.
+#
+
+# clangd cache
+.cahce
+
+# build cache
+build
+*.d
+*.o
+*.ir
+*.elf
+*.iso
