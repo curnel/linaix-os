@@ -10,6 +10,11 @@ set(CMAKE_C_COMPILER "/usr/bin/clang")
 set(CMAKE_CXX_COMPILER "/usr/bin/clang++")
 set(CMAKE_EXE_LINKER "/usr/bin/ld.lld")
 
+option(ENABLE_FORMAT "enable clang-format target" ON)
+option(ENABLE_TIDY "enable clang-tidy checks" ON)
+
+file(GLOB_RECURSE ALL_SOURCE_FILES "${CMAKE_SOURCE_DIR}/*.cpp" "${CMAKE_SOURCE_DIR}/*.hpp")
+
 # generate compile_commans.json
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
@@ -30,6 +35,11 @@ set(CMAKE_CXX_STANDARD 23)
 
 # import utils
 include(${CMAKE_SOURCE_DIR}/cmake/utils.cmake)
+
+# format codes
+execute_process(
+    COMMAND ./${CMAKE_SOURCE_DIR}/format.sh
+)
 
 # compiler kernel
 add_subdirectory(${CMAKE_SOURCE_DIR}/kernel)
