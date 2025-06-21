@@ -1,0 +1,34 @@
+name: Build linaix-os
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: x86_64
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install packages
+        uses: awalsh128/cache-apt-pkgs-action@latest
+        with:
+          packages: xorriso clang mtools lld lldb llvm genisoimage cmake ninja gcc g++ gcc-multilib g++-multilib
+          version: 1.0
+
+      - name: Build linaix-os
+        run: |
+          cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
+          cd build
+          ninja -j 24
+
+      - name: Upload linaix-os ISO
+        uses: actions/upload-artifact@v4
+        with:
+          name: linaix-os (ISO)
+          path: build/linaix-os.iso
+          compression-level: 9
